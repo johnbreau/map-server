@@ -2,7 +2,7 @@ import React from 'react';
 import { AppShell, useMantineTheme, useMantineColorScheme } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { 
-  BrowserRouter as Router, 
+  BrowserRouter as Router,
   Routes, 
   Route, 
   Navigate
@@ -19,8 +19,13 @@ import NoteViewer from './pages/NoteViewer';
 import AIPage from './pages/AIPage';
 import BooksPage from './pages/BooksPage';
 import JournalsView from './features/journals/JournalsView';
+import { HealthPage } from './pages/HealthPage';
 
 const queryClient = new QueryClient();
+
+// For now, we'll use the standard BrowserRouter
+// The future flags warning is just informational and won't affect functionality
+// We can address the v7 changes when we upgrade to React Router v7
 
 // Custom AppShell component with proper typing
 const CustomAppShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -100,6 +105,7 @@ const App = () => {
             <Route path="/ai" element={<AIPage />} />
             <Route path="/journals" element={<JournalsView />} />
             <Route path="/books" element={<BooksPage />} />
+            <Route path="/health" element={<HealthPage />} />
             <Route path="*" element={<Navigate to="/search" replace />} />
           </Routes>
         </CustomAppShell>

@@ -1,5 +1,5 @@
 import { Group, Text, ActionIcon, useMantineColorScheme, Button, Container } from '@mantine/core';
-import { IconSun, IconMoonStars, IconSearch, IconRobot, IconNotebook, IconBook } from '@tabler/icons-react';
+import { IconSun, IconMoonStars, IconSearch, IconRobot, IconNotebook, IconBook, IconHeart } from '@tabler/icons-react';
 import { Link, useLocation } from 'react-router-dom';
 
 export function Header() {
@@ -11,6 +11,7 @@ export function Header() {
     { link: '/ai', label: 'AI Chat', icon: <IconRobot size={18} /> },
     { link: '/journals', label: 'Journals', icon: <IconNotebook size={18} /> },
     { link: '/books', label: 'Books', icon: <IconBook size={18} /> },
+    { link: '/health', label: 'Health', icon: <IconHeart size={18} /> },
   ];
 
   const items = links.map((link) => (
